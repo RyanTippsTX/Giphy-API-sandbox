@@ -1,10 +1,11 @@
-const querry = 'cats';
 const apiKey = '8HMCCWtfBGe0WqkJFZ6nKWT6xJhaXqrD';
-const url = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${querry}`;
 
 const img = document.querySelector('img');
+const input = document.getElementById('searchText');
+input.value = 'cats';
 
 function renderNewGIF() {
+  const url = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${input.value}`;
   fetch(url, {
     mode: 'cors',
   })
